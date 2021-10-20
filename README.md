@@ -15,12 +15,13 @@ https://github.com/luispaulo/Upload-TXT-Eureciclo-DOCKER.git
 
 ## Verifique as confirguracoes mysql no arquivo .env:
 
-```DB_CONNECTION=mysql
-    DB_HOST=mysql
+```
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
     DB_PORT=3306
-    DB_DATABASE=laravel
+    DB_DATABASE=laravelsail
     DB_USERNAME=root
-    DB_PASSWORD=
+    DB_PASSWORD=123456789
 ```
 
 ## Instalar composer
