@@ -11,7 +11,7 @@
 
 ## Como iniciar o projeto
 - Clonar o projeto no github
-https://github.com/luispaulo/Upload-Csv.git
+https://github.com/luispaulo/Upload-TXT-Eureciclo-DOCKER.git
 
 ## Verifique as confirguracoes mysql no arquivo .env:
 
