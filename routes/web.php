@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-$router->get('/', 'App\Http\Controllers\ListController@listar');
+$router->get('/', 'App\Http\Controllers\ListController@list');
 
 $router->post('/upload', 'App\Http\Controllers\UploadController@upload')->name('upload');;
