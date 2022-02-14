@@ -8,7 +8,7 @@ use App\Models\Venda;
 
 class ListController extends Controller
 {
-    public function listar()
+    public function list()
     {
 
         $vendas = DB::table('vendas')->get();
