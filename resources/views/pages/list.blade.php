@@ -25,43 +25,42 @@
     @endisset
 
 
-    <h1 align="center">UPLOAD DE ARQUIVOS DA SUA VENDA</h1>
+    <h1 align="center">UPLOAD YOUR SALE FILES</h1>
 
     <form class="form-upload" action="{{ route('upload') }}" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="mb-3">
             <input class="form-control" type="file" name="file" id="file" required accept="">
-            <label for="file" class="form-label">Escolha um arquivo TXT ou CSV:</label>
+            <label for="file" class="form-label">Choose a TXT or CSV file:</label>
         </div>
 
-        <input class="btn btn-outline-primary submit" type="submit" value="Enviar">
+        <input class="btn btn-outline-primary submit" type="submit" value="Send">
     </form>
-    @if ($vendas)
+    @if ($sales)
         <table class="table">
             <thead>
             <tr>
-                <th>Comprador</th>
-                <th>Descrição</th>
-                <th>Preço Unitário</th>
-                <th>Quantidade</th>
-                <th>Endereço</th>
-                <th>Fornecedor</th>
+                <th>Buyer</th>
+                <th>Description</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Address</th>
+                <th>Supplier</th>
             </tr>
             </thead>
             <tbody>
-            @foreach ($vendas as $venda)
+            @foreach ($sales as $sale)
                 <tr>
-                    <td>{{$venda->comprador}}</td>
-                    <td>{{$venda->descricao}}</td>
-                    <td>{{$venda->preco_unitario}}</td>
-                    <td>{{$venda->qtd}}</td>
-                    <td>{{$venda->endereco}}</td>
-                    <td>{{$venda->fornecedor}}</td>
+                    <td>{{$sale->buyer}}</td>
+                    <td>{{$sale->duescription}}</td>
+                    <td>{{$sale->unit_price}}</td>
+                    <td>{{$sale->quantity}}</td>
+                    <td>{{$sale->address}}</td>
+                    <td>{{$sale->supplier}}</td>
                 </tr>
             @endforeach
             </tbody>
         </table>
     @endif
 @endsection
-

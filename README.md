@@ -2,7 +2,10 @@
 
 </p>
 
-## Luis Paulo Santos - Development
+## Development - Luis Paulo Santos
+
+Api developed to return a list of products from the OLX site, it returns all products by list, through a crawler,
+used unit test, PhpUnit to validate the expected result of the crawler.
 
 ## How to start the project
 - Clone the project on github

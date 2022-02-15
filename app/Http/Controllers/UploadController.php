@@ -22,12 +22,12 @@ class UploadController extends Controller
     {
 
         $request->validate(['file' => 'required|file'], [
-            'file.required' => 'O campo do arquivo é obrigatório.'
+            'file.required' => 'File field not required'
         ]);
 
         try {
             if(!$this->validateExtension($request->file('file')->getClientOriginalExtension()))
-                throw new Exception("Extencao de arquivo invalida,escolha outro arquivo.");
+                throw new Exception("Invalid file extension, choose another file.");
 
             $file = $this->normalize($request->file('file')->get());
 
@@ -41,26 +41,26 @@ class UploadController extends Controller
                     count($entry) !== 6
                 ) continue;
 
-                $arrVendas[] = [
-                    'comprador' => $entry[0],
-                    'descricao' => $entry[1],
-                    'preco_unitario' => $entry[2],
-                    'qtd' => $entry[3],
-                    'endereco' => $entry[4],
-                    'fornecedor' => $entry[5]
+                $arrSales[] = [
+                    'buyer' => $entry[0],
+                    'description' => $entry[1],
+                    'unit_price' => $entry[2],
+                    'quantity' => $entry[3],
+                    'address' => $entry[4],
+                    'supplier' => $entry[5]
                 ];
             }
 
-            if (!isset($arrVendas))
-                throw new Exception('As informacoes do arquivos nao foram aceitas.');
+            if (!isset($arrSales))
+                throw new Exception('File information was not accepted.');
 
-            Venda::insert($arrVendas);
+            Sale::insert($arrSales);
 
         } catch (\Throwable $th) {
             return redirect()->back()->withErrors(['error' => $th->getMessage()]);
         }
 
-        return redirect('/')->with('status', 'Arquivo carregado com sucesso');;
+        return redirect('/')->with('status', 'File uploaded successfully');;
     }
 
 }
