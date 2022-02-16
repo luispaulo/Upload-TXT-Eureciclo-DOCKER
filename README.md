@@ -40,5 +40,12 @@ https://github.com/luispaulo/Upload-TXT-Eureciclo-DOCKER.git
   sail php artisan migrate
 ```
 
+## If there is an error run the command:
+```
+    php artisan route:clear
+    php artisan config:clear
+    php artisan cache:clear
+```
+
 ## Questions and contact
 - **[Whatsapp - Luis Paulo ](https://api.whatsapp.com/send?phone=5561982481004)**
